@@ -1,5 +1,11 @@
+use chaincheck_macro::chaincheck;
+
 pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+    let v = vec![1, 2, 3];
+
+    chaincheck!(v.iter().map(|x| x + 1););
+
+    8
 }
 
 #[cfg(test)]
